@@ -1,42 +1,66 @@
-#include<stdio.h>
+#include <stdio.h>
 int main() {
-    int a[10][10], b[10][10], c[10][10], n, i, j, k;
+  // Define the size of the matrices.
+  int row ;
+  int col ;
 
-    printf("Enter the value of N (N <= 10): ");
-    scanf("%d", & n);
-    printf("Enter the elements of Matrix-A: \n");
 
-    for (i = 0; i < n; i++) {
-        for (j = 0; j < n; j++) {
-            scanf("%d", & a[i][j]);
-        }
+  printf("\n Enter the size of the row :");
+  scanf("%d", &row);
+
+   printf("Enter the size of the column :");
+  scanf("%d", &col);
+
+
+  // Define the matrices.
+  int A[row][col];
+  int B[row][col];
+  int C[row][col];
+
+
+  printf("Enter the matrix A of %d * %d :",row,col);
+  // Initialize the matrices.
+  for (int i = 0; i < row; i++) {
+    for (int j = 0; j < col; j++) {
+      scanf(" %d ", &A[i][j]);
     }
+  }
 
-    printf("Enter the elements of Matrix-B: \n");
+   int p  ;
+  int q ;
 
-    for (i = 0; i < n; i++) {
-        for (j = 0; j < n; j++) {
-            scanf("%d", & b[i][j]);
-        }
+
+  printf("\n Enter the size of the row  for matrix B: \n");
+  scanf("%d", &p);
+
+   printf("Enter the size of the column for matrix B: ");
+  scanf("%d", &q);
+
+    printf("Enter the matrix B of %d * %d :\n",p,q);
+  for (int i = 0; i < p; i++) {
+    for (int j = 0; j < q; j++) {
+      scanf(" %d ", &B[i][j]);
     }
-
-    // multiplu
-
-    for (i = 0; i < n; i++) {
-        for (j = 0; j < n; j++) {
-            c[i][j] = 0;
-            for (k = 0; k < n; k++) {
-                c[i][j] += a[i][k] * b[k][j];
-            }
-        }
+  }
+  // Multiply the matrices.
+  for (int i = 0; i < row; i++) {
+    for (int j = 0; j < q; j++) {
+      C[i][j] = 0;
+      for (int k = 0; k < p; k++) {
+        C[i][j] += A[i][k] * B[k][j];
+      }
     }
+  }
 
-    printf("The product of the two matrices is: \n");
-    for (i = 0; i < n; i++) {
-        for (j = 0; j < n; j++) {
-            printf("%d\t", c[i][j]);
-        }
-        printf("\n");
+
+
+  // Print the results.
+  printf("Product of the matrix A X B :\n");
+  for (int i = 0; i < row; i++) {
+    for (int j = 0; j < q; j++) {
+      printf(" %d ", C[i][j]);
     }
-    return 0;
+    printf("\n");
+  }
+  return 0;
 }
