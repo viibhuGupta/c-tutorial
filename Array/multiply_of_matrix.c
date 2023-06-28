@@ -1,8 +1,8 @@
 #include <stdio.h>
 int main() {
   // Define the size of the matrices.
-  int row ;
-  int col ;
+  int row , col , p ,q ;
+  
 
 
   printf("\n Enter the size of the row :");
@@ -18,16 +18,15 @@ int main() {
   int C[row][col];
 
 
-  printf("Enter the matrix A of %d * %d :",row,col);
+  printf("Enter the matrix A of %d* %d :",row,col);
   // Initialize the matrices.
-  for (int i = 0; i < row; i++) {
+  for (int i = 0; i < row; i++) { 
     for (int j = 0; j < col; j++) {
-      scanf(" %d ", &A[i][j]);
+      scanf("%d", &A[i][j]);
     }
   }
 
-   int p  ;
-  int q ;
+  
 
 
   printf("\n Enter the size of the row  for matrix B: \n");
